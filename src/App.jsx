@@ -6,10 +6,10 @@ function App() {
   const [count, setCount] = useState(0)
   let a = 'test'
 
-  import.meta.env.PROD
-    ? (a = process.env.VITE_MY_NAME)
-    : (a = import.meta.env.VITE_NAME)
-
+  // import.meta.env.PROD
+  //   ? (a = process.env.VITE_MY_NAME)
+  //   : (a = import.meta.env.VITE_NAME)
+  a = import.meta.env.VITE_MY_NAME ? import.meta.env.VITE_MY_NAME : 'nichts'
   return (
     <div className='App'>
       <div>
