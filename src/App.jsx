@@ -5,7 +5,10 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   console.log(process.env.NODE_ENV)
-
+  let a = 'local'
+  if (process.env.NODE_ENV === 'production') {
+    a = process.env.MY_NAME
+  }
   return (
     <div className='App'>
       <div>
@@ -26,7 +29,7 @@ function App() {
         </p>
       </div>
       <p className='read-the-docs'>{process.env.NODE_ENV}</p>
-      <p className='read-the-docs'>{process.env.MY_NAME}</p>
+      <p className='read-the-docs'>{a}</p>
     </div>
   )
 }
