@@ -26,6 +26,7 @@ function App() {
         </p>
       </div>
       <p className='read-the-docs'>{process.env.NODE_ENV}</p>
+      <p className='read-the-docs'>{'hier' ?? process.env.MY_NAME}</p>
     </div>
   )
 }
