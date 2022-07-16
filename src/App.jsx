@@ -5,9 +5,11 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   let a = 'test'
+
   import.meta.env.PROD
-    ? (a = process.env.MY_NAME)
+    ? (a = process.env.VITE_MY_NAME)
     : (a = import.meta.env.VITE_NAME)
+
   return (
     <div className='App'>
       <div>
