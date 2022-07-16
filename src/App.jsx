@@ -4,11 +4,10 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  console.log(process.env.NODE_ENV)
-  let a = 'local'
-  if (process.env.NODE_ENV === 'production') {
-    a = process.env.MY_NAME
-  }
+  let a = 'test'
+  import.meta.env.PROD
+    ? (a = process.env.MY_NAME)
+    : (a = import.meta.env.VITE_NAME)
   return (
     <div className='App'>
       <div>
@@ -28,7 +27,7 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className='read-the-docs'>{process.env.NODE_ENV}</p>
+
       <p className='read-the-docs'>{a}</p>
     </div>
   )
